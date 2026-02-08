@@ -1,9 +1,12 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QSettings>
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    QSettings settings("JinGroup", "BASSC");
 
     QQmlApplicationEngine engine;
     QObject::connect(
