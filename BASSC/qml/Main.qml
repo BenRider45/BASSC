@@ -1,38 +1,47 @@
 import QtQuick
 import QtQuick.Controls
+import "pages"
 
-//TODO
-//ADD MenuBar
-//Add Buttons to find existing project or create new project (Opens dialogue for options)
-// How to enact c++ code from qt?
 Window {
     id: mainWindow
-    width: 640
-    height: 480
+    width: 1280
+    height: 800
     visible: true
     title: qsTr("BASSC")
-    Column{
-        anchors.horizontalCenter: parent.horizontalCenter
 
-        Text {
-            id: titleText
-            text: "BASSC"
-            y: parent.verticalCenter
-            anchors.horizontalCenter: parent.horizontalCenter
-            font.pointSize: 24; font.bold: true
-        }
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: projectSelectionPage
 
-
-        Button{
-            id: button1
-            y: parent.verticalCenter
-            text: "Button1"
-            onClicked: {
-                console.log("Button Printed");
-                titleText.parent.y += 100;
+        Component {
+            id: projectSelectionPage
+            ProjectSelectionPage {
+                onNavigateToAnnotation: {
+                    stackView.push(fileAnnotationPage)
+                }
             }
-
         }
 
+        Component {
+            id: fileAnnotationPage
+            FileAnnotationPage {
+                onNavigateToModel: {
+                    stackView.push(classificationModelPage)
+                }
+                onNavigateBack: {
+                    stackView.pop()
+                }
+            }
+        }
+
+        Component {
+            id: classificationModelPage
+            ClassificationModelPage {
+                onNavigateBack: {
+                    stackView.pop()
+                }
+            }
+        }
     }
 }
