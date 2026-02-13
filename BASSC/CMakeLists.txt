@@ -16,6 +16,10 @@ qt_add_qml_module(appBASSC
     URI BASSC
     QML_FILES
         qml/Main.qml
+SOURCES libs/Project/include/Project.h
+QML_FILES qml/Main.qml
+RESOURCES libs/Project/CMakeLists.txt
+SOURCES libs/Project/src/Project.cpp
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

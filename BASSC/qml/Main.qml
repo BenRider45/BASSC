@@ -1,7 +1,10 @@
 import QtQuick
 import QtQuick.Controls
 
-
+//TODO
+//ADD MenuBar
+//Add Buttons to find existing project or create new project (Opens dialogue for options)
+// How to enact c++ code from qt?
 Window {
     id: mainWindow
     width: 640
