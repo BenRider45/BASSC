@@ -3,13 +3,14 @@ import QtQuick.Controls
 
 Flow {
     id: mainView
-    width: 1920
-    height: 1080
+    width: 1820
+    height: 980
     property string viewMode: "Annotation";
 
     Column {
         id: column
         anchors.fill: parent
+        z: 99
 
         Rectangle {
             id: soundView
@@ -19,7 +20,7 @@ Flow {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.leftMargin: 20
-            anchors.topMargin: 20
+            anchors.topMargin: 100
             anchors.bottomMargin: 550
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -31,15 +32,18 @@ Flow {
                 anchors.right: parent.right
                 anchors.leftMargin: 0
                 anchors.rightMargin: 0
+                contentWidth: parent.width
                 padding: 0
+
                 TabButton {
-                    id: annotationTab
-                    text: qsTr("Tab Button")
+                    id: tabButton
+                    x: 890
+                    text: qsTr("Spectrogram")
                 }
 
                 TabButton {
-                    id: modelViewTab
-                    text: qsTr("Tab Button")
+                    id: tabButton1
+                    text: qsTr("Classification Model")
                 }
             }
         }
@@ -64,21 +68,30 @@ Flow {
                 anchors.right: parent.right
                 anchors.leftMargin: 0
                 anchors.rightMargin: 0
+                leftPadding: 40
                 padding: 0
 
                 TabButton {
                     id: syllableListTab
+                    x: 0
                     text: qsTr("Syllables")
                 }
 
                 TabButton {
                     id: utilTab
+                    x: 434
                     text: qsTr("Utilities")
                 }
 
                 TabButton {
                     id: notesTab
+                    x: 868
                     text: qsTr("Notes")
+                }
+
+                TabButton {
+                    id: tabButton2
+                    text: qsTr("Signal Info")
                 }
             }
         }
