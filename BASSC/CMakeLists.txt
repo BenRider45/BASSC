@@ -28,6 +28,9 @@ qt_add_qml_module(appBASSC
     SOURCES
         libs/Project/include/Project.h
         libs/Project/src/Project.cpp
+SOURCES src/managers/AudioManager.cpp src/managers/AudioManager.h src/managers/ModelManager.cpp src/managers/ModelManager.h src/managers/ProjectManager.cpp src/managers/ProjectManager.h
+RESOURCES src/managers/README.md
+QML_FILES qml/components/ConfusionMatrix.qml qml/components/FileSelectionPanel.qml qml/components/SpectrogramViewer.qml qml/components/SymbolGrid.qml qml/components/TopMenuBar.qml qml/dialogs/ProjectDialog.qml qml/pages/ClassificationModelPage.qml qml/pages/FileAnnotationPage.qml qml/pages/ProjectSelectionPage.qml qml/Main.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
