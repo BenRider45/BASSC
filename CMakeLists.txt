@@ -6,7 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
-qt_standard_project_setup(REQUIRES 6.8)
+qt_standard_project_setup(REQUIRES 6.8.5)
+
+add_subdirectory(libs/ProjectCore)
 
 qt_add_executable(appBASSC
     main.cpp
@@ -16,7 +18,6 @@ qt_add_qml_module(appBASSC
     URI BASSC
     QML_FILES
         qml/Main.qml
-        RESOURCES
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
@@ -32,6 +33,7 @@ set_target_properties(appBASSC PROPERTIES
 
 target_link_libraries(appBASSC
     PRIVATE Qt6::Quick
+    ProjectCore
 )
 
 include(GNUInstallDirs)

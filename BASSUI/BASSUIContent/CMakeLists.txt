@@ -12,9 +12,12 @@ qt6_add_qml_module(BASSUIContent
         "App.qml"
         "CreateProjectDialog.qml"
         "LoadingSplashScreen.qml"
+        "MainView.qml"
         "ProjectLoadConfirmationDialog.qml"
         "ProjectSelectWindow.qml"
         "Screen01.qml"
+    RESOURCES
+        "images/vectorstock_33740990.png"
 )
 
 

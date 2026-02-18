@@ -9,6 +9,8 @@ find_package(Qt6 REQUIRED COMPONENTS Core)
 add_library(ProjectCore STATIC
     src/Project.cpp
     src/ProjectHandler.cpp
+    include/ProjectCore/Project.h
+    include/ProjectCore/ProjectHandler.h
 )
 
 # ── Public headers ─────────────────────────────────────────────────────────────

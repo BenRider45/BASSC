@@ -17,7 +17,7 @@ Rectangle {
     width: Constants.width
     height: Constants.height
     color: "#2f2f2f"
-    z: 99
+    z: 98
     property bool isLoading: false
     property string projectName: ""
     property bool isProjectLoaded: false
@@ -29,10 +29,13 @@ Rectangle {
         y: 926
         width: 830
         height: 81
-        opacity: 0.222
+        opacity: 0.334
+        z: 98
         position: ToolBar.Footer
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 73
+        layer.enabled: false
+        antialiasing: true
         bottomInset: 25
         bottomPadding: 50
         topPadding: 0
@@ -54,9 +57,16 @@ Rectangle {
     LoadingSplashScreen {
         id: loadingSplashScreen
         onProjectLoaded: () =>{
-            isProjectLoaded = true;
-            isLoading = false;
+                             isProjectLoaded = true;
+                             isLoading = false;
                          }
+    }
+
+    MainView {
+        id: mainView
+        x: -8
+        y: 0
+        visible: false
     }
 
     states: [
@@ -65,7 +75,22 @@ Rectangle {
 
             PropertyChanges {
                 target: loadingSplashScreen
+                x: 0
+                y: 0
                 visible: false
+            }
+
+            PropertyChanges {
+                target: mainView
+                x: -8
+                y: 0
+                visible: false
+            }
+
+            PropertyChanges {
+                target: projectSelectScreen
+                anchors.verticalCenterOffset: 1
+                anchors.horizontalCenterOffset: 1
             }
         },
         State {
@@ -82,19 +107,37 @@ Rectangle {
                 x: 760
                 y: 390
             }
+
+            PropertyChanges {
+                target: mainView
+                visible: false
+            }
         },
         State {
-            name: "AnnotationView"
+            name: "MainAppView"
             when: isProjectLoaded
 
             PropertyChanges {
                 target: projectSelectScreen
                 visible: false
+                anchors.verticalCenterOffset: -147
+                anchors.horizontalCenterOffset: -603
             }
 
             PropertyChanges {
                 target: loadingSplashScreen
+                x: -604
+                y: -148
                 visible: false
+            }
+
+            PropertyChanges {
+                target: mainView
+                x: 0
+                y: 0
+                width: 1920
+                height: 1080
+                visible: true
             }
         }
     ]

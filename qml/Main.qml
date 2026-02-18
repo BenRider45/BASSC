@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 
-
 Window {
     id: mainWindow
     width: 640
@@ -10,10 +9,10 @@ Window {
     title: qsTr("BASSC")
     Column{
         anchors.horizontalCenter: parent.horizontalCenter
-
+        anchors.verticalCenter: parent.verticalCenter
         Text {
             id: titleText
-            text: "BASSC"
+            text: "BASSCBALLS"
             y: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
             font.pointSize: 24; font.bold: true
@@ -22,11 +21,12 @@ Window {
 
         Button{
             id: button1
-            y: parent.verticalCenter
-            text: "Button1"
+            palette.buttonText: "black"
+            y: parent.verticalCenter + 40
+            text: "NewProject";
             onClicked: {
-                console.log("Button Printed");
-                titleText.parent.y += 100;
+              console.log("Button Printed");
+              projectHandler.newProject("Blah", "Blah/Blah");
             }
 
         }
