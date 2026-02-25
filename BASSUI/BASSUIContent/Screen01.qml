@@ -1,5 +1,6 @@
 
 
+
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -25,13 +26,12 @@ Rectangle {
 
     ToolBar {
         id: toolBar
-        x: 545
-        y: 926
         width: 830
         height: 81
         opacity: 0.334
         z: 98
         position: ToolBar.Footer
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 73
         layer.enabled: false
@@ -64,8 +64,7 @@ Rectangle {
 
     MainView {
         id: mainView
-        x: -8
-        y: 0
+        anchors.fill: parent
         visible: false
     }
 

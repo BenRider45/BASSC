@@ -7,7 +7,6 @@ Dialog {
     width: 400
     height: 300
     modal: true
-    anchors.centerIn: parent
 
     signal confirmProjectLoad()
 

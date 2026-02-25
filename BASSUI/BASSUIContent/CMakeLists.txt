@@ -10,13 +10,22 @@ qt6_add_qml_module(BASSUIContent
     RESOURCE_PREFIX "/qt/qml"
     QML_FILES
         "App.qml"
+        "ClassificationModelView.qml"
         "CreateProjectDialog.qml"
+        "InfoView.qml"
         "LoadingSplashScreen.qml"
         "MainView.qml"
+        "NotesView.qml"
         "ProjectLoadConfirmationDialog.qml"
         "ProjectSelectWindow.qml"
         "Screen01.qml"
+        "SignalInfoView.qml"
+        "SoundView.qml"
+        "SpectrogramViewSlop.qml"
+        "SyllableView.qml"
+        "UtilitiesView.qml"
     RESOURCES
+        "images/SpectMock.png"
         "images/vectorstock_33740990.png"
 )
 

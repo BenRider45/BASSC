@@ -26,8 +26,8 @@ Rectangle {
 
     BusyIndicator {
         id: busyIndicator
-        x: 170
-        y: 120
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: 20
     }
 
     Timer {

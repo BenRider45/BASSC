@@ -96,15 +96,9 @@ Rectangle {
 
             ListView {
                 id: recentProjectsList
-                x: 159
-                y: 172
-                width: 689
-                height: 161
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 200
+                anchors.fill: parent
+                anchors.margins: 20
                 layer.enabled: false
-                anchors.verticalCenterOffset: 0
-                anchors.centerIn: parent
                 clip: true // hides items outside the bounds
                 model: recentProjectsModel
 

@@ -5,7 +5,6 @@ Dialog{
     id: createProjectDialog
     title: "Create New Project"
     modal: true
-    anchors.centerIn: parent
     width: 400
     height: 300
     signal projectCreated(string name, string path);
